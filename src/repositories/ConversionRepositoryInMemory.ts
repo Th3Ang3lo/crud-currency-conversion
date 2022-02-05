@@ -31,4 +31,8 @@ export class ConversionRepositoryInMemory implements IConversionRepository {
   public findOne (conversionID: number): Conversion {
     return this.conversions.find(conversion => conversion.id === conversionID)
   }
+
+  public deleteOne (conversionID: number): void {
+    this.conversions.splice(this.conversions.findIndex(conversion => conversion.id === conversionID), 1)
+  }
 }
