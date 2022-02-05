@@ -1,12 +1,13 @@
 import { Conversion } from '@models/Conversion'
 
 import { ConversionData } from '@shared/dtos/conversion'
+import { IConversionRepository } from './IConversionRepository'
 
-export class ConversionRepositoryInMemory {
+export class ConversionRepositoryInMemory implements IConversionRepository {
   public conversions: Conversion[] = []
   public itemsCurrentCount: number = 0
 
-  public async create (conversionData: ConversionData): Promise<Conversion> {
+  public create (conversionData: ConversionData): Conversion {
     const { currency, convertedCurrency, value, convertedValue } = conversionData
 
     const conversion = new Conversion()
@@ -21,5 +22,9 @@ export class ConversionRepositoryInMemory {
     this.conversions.push(conversion)
 
     return conversion
+  }
+
+  public findAll (): Conversion[] {
+    return this.conversions
   }
 }

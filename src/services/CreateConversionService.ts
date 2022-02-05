@@ -31,7 +31,7 @@ export class CreateConversionService {
 
     const convertedValue = (value * conversor.bid).toFixed(2)
 
-    const createConversion = await this.conversionRepository.create({
+    const createConversion = this.conversionRepository.create({
       currency,
       convertedCurrency: convertToCurrency,
       value,
