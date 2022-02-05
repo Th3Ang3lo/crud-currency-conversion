@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "rootDir": "./src",
+    "strictPropertyInitialization": false,
+    "baseUrl": "./src",
+    "module": "commonjs",
+    "allowJs": true,
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "@shared/*": [
+        "./shared/*"
+      ],
+      "@controllers/*": [
+        "./controllers/*"
+      ],
+      "@services/*": [
+        "./services/*"
+      ],
+      "@routes/*": [
+        "./routes/*"
+      ],
+      "@models/*": [
+        "./models/*"
+      ],
+      "@repositories/*": [
+        "./repositories/*"
+      ]
+    }
+  },
+  "include": ["src"]
+}
