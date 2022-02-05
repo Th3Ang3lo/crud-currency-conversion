@@ -3,7 +3,7 @@ export interface ConversionData {
   currency: string
   convertedCurrency: string
   value: number
-  convertedValue: number
+  convertedValue: string
   created_at?: Date
   updated_at?: Date
 }

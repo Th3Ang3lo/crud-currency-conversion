@@ -26,3 +26,18 @@ export const validateCreateConversion = async (conversionData: IConversionReques
     })
   }
 }
+
+export const validateConversionID = async (conversionID: number): Promise<void> => {
+  try {
+    const schema = yup.object({
+      conversionID: yup.number()
+        .typeError('O campo id deve conter um valor numérico')
+        .required('Campo id obrigatorio.')
+    })
+    await schema.validate({ conversionID })
+  } catch (err) {
+    throw new BadRequestException(err.message, {
+      [err.path]: err.message
+    })
+  }
+}

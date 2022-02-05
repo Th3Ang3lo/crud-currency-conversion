@@ -27,4 +27,8 @@ export class ConversionRepositoryInMemory implements IConversionRepository {
   public findAll (): Conversion[] {
     return this.conversions
   }
+
+  public findOne (conversionID: number): Conversion {
+    return this.conversions.find(conversion => conversion.id === conversionID)
+  }
 }

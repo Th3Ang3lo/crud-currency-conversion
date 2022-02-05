@@ -5,4 +5,5 @@ import { Conversion } from '@models/Conversion'
 export interface IConversionRepository {
   create: (conversionData: ConversionData) => Conversion
   findAll: () => Conversion[]
+  findOne: (conversionID: number) => Conversion
 }
